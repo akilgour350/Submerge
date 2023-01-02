@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vega.Submerge</name>
+    </assembly>
+    <members>
+        <member name="T:Vega.Submerge.Submerge">
+            <summary>
+            Allows data to be "drowned" before encoding or encrypting.
+            Drowning is not recommended for large volumes of data, as it uses 16 bytes for every character within a string.
+            Drowning is recommended for storing smaller volumes of data, such as user configuration data within an application.
+            </summary>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.GenerateDrownKey(System.Int32)">
+            <summary>
+            Generates a drown key.
+            </summary>
+            <returns>Returns an array of bytes, the Drown key.</returns>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.GenCharray(System.Int32)">
+            <summary>
+            Generates an array of characters.
+            </summary>
+            <param name="length">Length of the array to be generated.</param>
+            <returns>Returns an array of characters.</returns>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.Drown(System.String,System.Int32[])">
+            <summary>
+            Drowns the given string using the given Drown Key.
+            </summary>
+            <param name="text">The text to be drowned.</param>
+            <param name="drownKey">The Drown Key to be used.</param>
+            <returns>Returns an array of strings containing the drowned string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.Rescue(System.String[],System.Int32[])">
+            <summary>
+            Retrieves data from a drowned string using the given Drown Key.
+            </summary>
+            <param name="drownedText">The array containing the drowned string.</param>
+            <param name="drownKey">The Drown Key used to drown the original string.</param>
+            <returns>Returns the recovered string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.DrownAndEncode(System.String,System.Int32[])">
+            <summary>
+            Drowns a string, then encodes it using UTF-8.
+            </summary>
+            <param name="text">The text to be drowned and encoded.</param>
+            <param name="drownKey">The key to be used to drown the text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vega.Submerge.Submerge.DecodeAndRescue(System.String[],System.Int32[])">
+            <summary>
+            Decides the encoded drowned data using UTF-8, then recovers the drowned string.
+            </summary>
+            <param name="drownedText">The encoded array containing the drowned string.</param>
+            <param name="drownKey">The key used to drown the string.</param>
+            <returns>Returns the decoded and recovered string.</returns>
+        </member>
+        <member name="T:Vega.Submerge.SEncoder">
+            <summary>
+            Contains options for each available encoder.
+            </summary>
+        </member>
+        <member name="F:Vega.Submerge.SEncoder.ASCII">
+            <summary>
+            ASCII Encoding
+            </summary>
+        </member>
+        <member name="F:Vega.Submerge.SEncoder.Latin1">
+            <summary>
+            Latin1 Encoding
+            </summary>
+        </member>
+        <member name="F:Vega.Submerge.SEncoder.Unicode">
+            <summary>
+            Unicode Encoding
+            </summary>
+        </member>
+        <member name="F:Vega.Submerge.SEncoder.UTF8">
+            <summary>
+            UTF-8 Encoding
+            </summary>
+        </member>
+        <member name="F:Vega.Submerge.SEncoder.UTF32">
+            <summary>
+            UTF-32 Encoding
+            </summary>
+        </member>
+        <member name="T:Vega.Submerge.SEncoding">
+            <summary>
+            Contains methods for encoding strings.
+            </summary>
+        </member>
+        <member name="M:Vega.Submerge.SEncoding.Encode(System.String)">
+            <summary>
+            Encodes the given text with the default ASCII encoder.
+            </summary>
+            <param name="text">The text to be encoded.</param>
+            <returns>Returns the encoded string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SEncoding.Encode(System.String,Vega.Submerge.SEncoder)">
+            <summary>
+            Encodes the given text with the given encoder.
+            </summary>
+            <param name="text">The text to be encoded.</param>
+            <param name="encoder">The type of encoding to be used: ASCII, Latin1, Unicode, UTF8, UTF32.</param>
+            <returns>Returns the encoded string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SEncoding.Decode(System.String)">
+            <summary>
+            Decodes the given text with the default ASCII encoder.
+            </summary>
+            <param name="text">The text to be decoded.</param>
+            <returns>Returns the decoded string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SEncoding.Decode(System.String,Vega.Submerge.SEncoder)">
+            <summary>
+            Decodes the given text with the given encoder.
+            </summary>
+            <param name="text">Tge text to be decoded.</param>
+            <param name="encoder">The type of encoding to be used: ASCII, Latin1, Unicode, UTF8, UTF32.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Vega.Submerge.SEncrypter">
+            <summary>
+            Contains methods for encrypting and decrypting strings, as well as generating keys for encryption.
+            </summary>
+        </member>
+        <member name="M:Vega.Submerge.SEncrypter.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the given string using the given key and IV.
+            </summary>
+            <param name="text">The text to be encrypted.</param>
+            <param name="key">The key to be used during encryption.</param>
+            <param name="iv">The IV to be used during encryption.</param>
+            <returns>Returns an array of bytes containing the encrypted text.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SEncrypter.Decrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts an array of bytes using the given key and IV.
+            </summary>
+            <param name="textByte">An array of encrypted bytes.</param>
+            <param name="key">The key used to encrypt the data.</param>
+            <param name="iv">The IV used to encrypt the data.</param>
+            <returns>Returns a decrypted string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SEncrypter.GenerateKey">
+            <summary>
+            Generates a cryptographically secure key with the given size.
+            </summary>
+            <returns>Returns an array of bytes containing the key.</returns>
+        </member>
+        <member name="T:Vega.Submerge.FileHandling">
+            <summary>
+            Contains methods for reading and writing to files.
+            </summary>
+        </member>
+        <member name="M:Vega.Submerge.FileHandling.AddToFile(System.String,System.String)">
+            <summary>
+            Appends the given text to the end of the given file.
+            </summary>
+            <param name="text">The text to be written to the file.</param>
+            <param name="directory">The directory of the file to be written to.</param>
+            <returns>Returns "true" if method executes successfully.</returns>
+        </member>
+        <member name="M:Vega.Submerge.FileHandling.OverwriteToFile(System.String,System.String)">
+            <summary>
+            Overwrites the text in the given file with the given text.
+            </summary>
+            <param name="text">The text to overwrite the file's contents with.</param>
+            <param name="directory">The directory of the file to be overwritten.</param>
+            <returns>Returns "true" if method executes successfully.</returns>
+        </member>
+        <member name="M:Vega.Submerge.FileHandling.ListToFile(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Writes a List to the given file, where each List item is a line.
+            </summary>
+            <param name="strings">The List of strings to be written to the file.</param>
+            <param name="directory">The directory of the file to be written to.</param>
+            <returns>Returns true if successful.</returns>
+        </member>
+        <member name="M:Vega.Submerge.FileHandling.StringFromFile(System.String)">
+            <summary>
+            Reads all lines in the given file and returns them as string.
+            </summary>
+            <param name="directory">The directory of the file to be read.</param>
+            <returns>Returns a string containing all text within the file.</returns>
+        </member>
+        <member name="M:Vega.Submerge.FileHandling.ListFromFile(System.String)">
+            <summary>
+            Reads each line in the given file, adding each to a List individually.
+            </summary>
+            <param name="directory">The directory of the file to be read.</param>
+            <returns>Returns a List containing all lines from the file.</returns>
+        </member>
+    </members>
+</doc>
