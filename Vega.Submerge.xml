@@ -4,6 +4,27 @@
         <name>Vega.Submerge</name>
     </assembly>
     <members>
+        <member name="T:Vega.Submerge.SMaster">
+            <summary>
+            Contains methods for combining functionality.
+            </summary>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.DrownAndEncode(System.String,System.Int32[])">
+            <summary>
+            Drowns a string, then encodes it using UTF-8.
+            </summary>
+            <param name="text">The text to be drowned and encoded.</param>
+            <param name="drownKey">The key to be used to drown the text.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.DecodeAndRescue(System.String[],System.Int32[])">
+            <summary>
+            Decides the encoded drowned data using UTF-8, then recovers the drowned string.
+            </summary>
+            <param name="drownedText">The encoded array containing the drowned string.</param>
+            <param name="drownKey">The key used to drown the string.</param>
+            <returns>Returns the decoded and recovered string.</returns>
+        </member>
         <member name="T:Vega.Submerge.SDrown">
             <summary>
             Allows data to be "drowned" before encoding or encrypting.
@@ -39,22 +60,6 @@
             <param name="drownedText">The array containing the drowned string.</param>
             <param name="drownKey">The Drown Key used to drown the original string.</param>
             <returns>Returns the recovered string.</returns>
-        </member>
-        <member name="M:Vega.Submerge.SDrown.DrownAndEncode(System.String,System.Int32[])">
-            <summary>
-            Drowns a string, then encodes it using UTF-8.
-            </summary>
-            <param name="text">The text to be drowned and encoded.</param>
-            <param name="drownKey">The key to be used to drown the text.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Vega.Submerge.SDrown.DecodeAndRescue(System.String[],System.Int32[])">
-            <summary>
-            Decides the encoded drowned data using UTF-8, then recovers the drowned string.
-            </summary>
-            <param name="drownedText">The encoded array containing the drowned string.</param>
-            <param name="drownKey">The key used to drown the string.</param>
-            <returns>Returns the decoded and recovered string.</returns>
         </member>
         <member name="T:Vega.Submerge.SEncoder">
             <summary>

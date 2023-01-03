@@ -1,5 +1,10 @@
 # Submerge Changelog
 
+## v1.0.4
+- Updated standard Encoding and Decoding type to UTF-8 (was ASCII)
+- Introduced ***SMaster*** class
+- Moved methods combining drowning and encoding to ***SMaster*** class
+
 ## v1.0.3
 - Added error handling to Encode and Decode methods
 
