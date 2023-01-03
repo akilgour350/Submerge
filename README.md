@@ -16,4 +16,4 @@ Documentation is currently not available, but I will begin adding it to my websi
 - Combined Drowning and Encryption.
 - Direct reading and writing encoded and encrypted files.
 - Reading and writing Dictionaries (and equivalent) to files.
-- Encryption utilising other algorithms
+- Encryption utilising other algorithms.
