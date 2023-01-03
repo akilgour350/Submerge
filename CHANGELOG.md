@@ -1,5 +1,9 @@
 # Submerge Changelog
 
+## v1.0.5
+- Renamed ***SEncrypter*** class to ***SEncrypting***
+- Renamed ***SDrown*** class to ***SDrowning***
+
 ## v1.0.4
 - Updated standard Encoding and Decoding type to UTF-8 (was ASCII)
 - Introduced ***SMaster*** class
