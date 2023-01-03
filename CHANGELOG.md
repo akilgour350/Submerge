@@ -1,7 +1,9 @@
 # Submerge Changelog
 
+## v1.0.2
+- Minor bug fix
+
 ## v1.0.1
-The following changes were made:
 - Changed the name of the ***Submerge*** class to ***SDrown***
 
 ## v1.0.0
