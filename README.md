@@ -17,3 +17,6 @@ Documentation is currently not available, but I will begin adding it to my websi
 - Direct reading and writing encoded and encrypted files.
 - Reading and writing Dictionaries (and equivalent) to files.
 - Encryption utilising other algorithms.
+
+## Licensing
+Submerge is completely free to use. However, I do request that you give me, Alastair Kilgour, credit somewhere in your code. Thanks!
