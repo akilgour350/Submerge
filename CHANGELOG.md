@@ -1,5 +1,8 @@
 # Submerge Changelog
 
+## v1.0.3
+- Added error handling to Encode and Decode methods
+
 ## v1.0.2
 - Minor bug fix
 
