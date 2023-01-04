@@ -10,7 +10,7 @@ Submerge is a library, written in C# which deals with file handling, encoding an
 - Drowning, an extra security measure I developed.
 
 ## Documentation
-Documentation for Submerge can be found on my website [here.](https://akilgour350.github.io/projects/submerge_documentation.html)
+Documentation for Submerge can be found on [my website.](https://akilgour350.github.io/projects/submerge_documentation.html)
 
 ## Upcoming Features
 - Combined Drowning and Encryption.
