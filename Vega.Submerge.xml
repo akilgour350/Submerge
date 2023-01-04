@@ -36,7 +36,8 @@
             <summary>
             Generates a drown key.
             </summary>
-            <returns>Returns an array of bytes, the Drown key.</returns>
+            <param name="length">The length of the string being drowned.</param>
+            <returns>Returns a generated drown key.</returns>
         </member>
         <member name="M:Vega.Submerge.SDrowning.GenCharray(System.Int32)">
             <summary>
