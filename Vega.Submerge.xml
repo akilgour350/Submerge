@@ -19,11 +19,43 @@
         </member>
         <member name="M:Vega.Submerge.SMaster.DecodeAndRescue(System.String[],System.Int32[])">
             <summary>
-            Decides the encoded drowned data using UTF-8, then recovers the drowned string.
+            Decodes the encoded drowned data using UTF-8, then recovers the drowned string.
             </summary>
             <param name="drownedText">The encoded array containing the drowned string.</param>
             <param name="drownKey">The key used to drown the string.</param>
             <returns>Returns the decoded and recovered string.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.EncodeToFile(System.String,System.String)">
+            <summary>
+            Encodes text using the default UTF-8 encoding, then adds the text to a file.
+            </summary>
+            <param name="text">The text to be written to the file.</param>
+            <param name="directory">The directory of the file to be written to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.EncodeToFile(Vega.Submerge.SEncoder,System.String,System.String)">
+            <summary>
+            Encodes text using the chosen encoding type, then adds text to a file.
+            </summary>
+            <param name="encoder">The type of encoding to be used.</param>
+            <param name="text">The text to be encoded and written to the file.</param>
+            <param name="directory">The directory of the file to be written to.</param>
+            <returns>Returns false if an error occurs.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.DecodeFromFile(System.String)">
+            <summary>
+            Retrieves a string from a file and decodes it using the default UTF-8 encoding.
+            </summary>
+            <param name="directory">The directory of the file where text should be retrieved from.</param>
+            <returns>Returns the decoded string from the file.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SMaster.DecodeFromFile(Vega.Submerge.SEncoder,System.String)">
+            <summary>
+            Retrieves a string from a file and decodes it using the chosen encoding type.
+            </summary>
+            <param name="encoder">The type of encoding to be used.</param>
+            <param name="directory">The directory of the file where text should be retrieved from.</param>
+            <returns>Returns the decoded string from the file.</returns>
         </member>
         <member name="T:Vega.Submerge.SDrowning">
             <summary>
@@ -99,7 +131,7 @@
         </member>
         <member name="M:Vega.Submerge.SEncoding.Encode(System.String)">
             <summary>
-            Encodes the given text with the default ASCII encoder.
+            Encodes the given text with the default UTF-8 encoder.
             </summary>
             <param name="text">The text to be encoded.</param>
             <returns>Returns the encoded string.</returns>
@@ -114,7 +146,7 @@
         </member>
         <member name="M:Vega.Submerge.SEncoding.Decode(System.String)">
             <summary>
-            Decodes the given text with the default ASCII encoder.
+            Decodes the given text with the default UTF-8 encoder.
             </summary>
             <param name="text">The text to be decoded.</param>
             <returns>Returns the decoded string.</returns>
@@ -156,12 +188,12 @@
             </summary>
             <returns>Returns an array of bytes containing the key.</returns>
         </member>
-        <member name="T:Vega.Submerge.FileHandling">
+        <member name="T:Vega.Submerge.SFileHandling">
             <summary>
             Contains methods for reading and writing to files.
             </summary>
         </member>
-        <member name="M:Vega.Submerge.FileHandling.AddToFile(System.String,System.String)">
+        <member name="M:Vega.Submerge.SFileHandling.AddToFile(System.String,System.String)">
             <summary>
             Appends the given text to the end of the given file.
             </summary>
@@ -169,7 +201,7 @@
             <param name="directory">The directory of the file to be written to.</param>
             <returns>Returns "true" if method executes successfully.</returns>
         </member>
-        <member name="M:Vega.Submerge.FileHandling.OverwriteToFile(System.String,System.String)">
+        <member name="M:Vega.Submerge.SFileHandling.OverwriteToFile(System.String,System.String)">
             <summary>
             Overwrites the text in the given file with the given text.
             </summary>
@@ -177,7 +209,7 @@
             <param name="directory">The directory of the file to be overwritten.</param>
             <returns>Returns "true" if method executes successfully.</returns>
         </member>
-        <member name="M:Vega.Submerge.FileHandling.ListToFile(System.Collections.Generic.List{System.String},System.String)">
+        <member name="M:Vega.Submerge.SFileHandling.ListToFile(System.Collections.Generic.List{System.String},System.String)">
             <summary>
             Writes a List to the given file, where each List item is a line.
             </summary>
@@ -185,19 +217,26 @@
             <param name="directory">The directory of the file to be written to.</param>
             <returns>Returns true if successful.</returns>
         </member>
-        <member name="M:Vega.Submerge.FileHandling.StringFromFile(System.String)">
+        <member name="M:Vega.Submerge.SFileHandling.StringFromFile(System.String)">
             <summary>
             Reads all lines in the given file and returns them as string.
             </summary>
             <param name="directory">The directory of the file to be read.</param>
             <returns>Returns a string containing all text within the file.</returns>
         </member>
-        <member name="M:Vega.Submerge.FileHandling.ListFromFile(System.String)">
+        <member name="M:Vega.Submerge.SFileHandling.ListFromFile(System.String)">
             <summary>
             Reads each line in the given file, adding each to a List individually.
             </summary>
             <param name="directory">The directory of the file to be read.</param>
             <returns>Returns a List containing all lines from the file.</returns>
+        </member>
+        <member name="M:Vega.Submerge.SFileHandling.WipeFile(System.String)">
+            <summary>
+            Erases all data within a file.
+            </summary>
+            <param name="directory">The directory of the file to be wiped.</param>
+            <returns>Returns false if an error occurs.</returns>
         </member>
     </members>
 </doc>
